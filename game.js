@@ -45,16 +45,27 @@ function addSingleFrame(a, b){
 }
 
 let totalScore = 0
+let newScoreArray = [ ]
+
+// function addFrameToFrame(frame) {
+//     for ( let i = 0 ; i < frames.length ; i++) {
+//         totalScore = newScore + newScore
+//     }
+// }
 
 function addAllFrames(frames){
   //Loop through frames and run addSingframe function
   frames.forEach(frame => {
     let newScore = addSingleFrame(frame[0], frame[1])
+    newScoreArray.push(newScore)
     console.log(newScore)
-    return  totalScore += newScore
-  } )
+  })
+  //function to add frame to frame
+  return newScoreArray
 }
+
 addAllFrames(frames)
+console.log(newScoreArray)
 
 
 
