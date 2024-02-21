@@ -39,62 +39,41 @@ const frames = [
 
 function addSingleFrame(a, b){
   return a + b
-  // // push frame total to game total
-  // totalScore += singleFrameTotal
-  // return totalScore
 }
 
 let totalScore = 0
 let newScoreArray = [ ]
 
-// function addFrameToFrame(frame) {
-//     for ( let i = 0 ; i < frames.length ; i++) {
-//         totalScore = newScore + newScore
-//     }
-// }
 
 function addAllFrames(frames){
-  //Loop through frames and run addSingframe function
+  //Loop through frames and within all frames to return an array of each frame total
   frames.forEach(frame => {
     let newScore = addSingleFrame(frame[0], frame[1])
     newScoreArray.push(newScore)
-    console.log(newScore)
+    // console.log(newScore)
   })
-  //function to add frame to frame
   return newScoreArray
 }
 
 addAllFrames(frames)
 console.log(newScoreArray)
 
-
-
-// function totalFrames(frame) {
-// // loop: game total + total of frame index + 1 
-// for (frame of frames){
-//     // add frame to frame
-//     let singleFrameScore = addSingleFrame(frame)
-//     // create variable to add next frame index total score
-//     let nextFrame = frame[0] + 1
-//     singleFrameScore +
-//     // return above
-//   }
-
+// while we try something new
+// function addTotalFrames(){
+//   const initialValue = 0
+//   totalScore = newScoreArray.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
+//   return totalScore
 // }
 
+function addTotalFrames(){
+  for (let i = 0; i < newScoreArray.length; i++){
+    let frameSum = newScoreArray[i]++
+    return totalScore += frameSum
+  }
+}
 
-
-//   addFrame = frame + frame
-
-
-// console.log(frames[0])
-// console.log(frames[1])
-// console.log(frames[2])
-
-
-
-
-
+addTotalFrames()
+console.log(totalScore)
 
 // function addTotalFrame(frame){
 //   let totalScore = 0
@@ -104,9 +83,3 @@ console.log(newScoreArray)
 //     return totalScore
   // })}
   
-
-// define total score
-// go through each frame in game
-// add score to main score
-// added two balls together
-// added to main
