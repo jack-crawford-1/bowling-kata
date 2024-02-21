@@ -35,18 +35,50 @@ const frames = [
 // singleFrame = a + b
 // totalFrames =  (a + B) + etc
 
+
+
 function addSingleFrame(a, b){
-  const frame = a + b
-  for (frame of frames){
-    // add frame to frame
-    // return above
-  }
-  addFrame = frame + frame
+  return a + b
+  // // push frame total to game total
+  // totalScore += singleFrameTotal
+  // return totalScore
 }
 
-console.log(frames[0])
-console.log(frames[1])
-console.log(frames[2])
+let totalScore = 0
+
+function addAllFrames(frames){
+  //Loop through frames and run addSingframe function
+  frames.forEach(frame => {
+    let newScore = addSingleFrame(frame[0], frame[1])
+    console.log(newScore)
+    return  totalScore += newScore
+  } )
+}
+addAllFrames(frames)
+
+
+
+// function totalFrames(frame) {
+// // loop: game total + total of frame index + 1 
+// for (frame of frames){
+//     // add frame to frame
+//     let singleFrameScore = addSingleFrame(frame)
+//     // create variable to add next frame index total score
+//     let nextFrame = frame[0] + 1
+//     singleFrameScore +
+//     // return above
+//   }
+
+// }
+
+
+
+//   addFrame = frame + frame
+
+
+// console.log(frames[0])
+// console.log(frames[1])
+// console.log(frames[2])
 
 
 
