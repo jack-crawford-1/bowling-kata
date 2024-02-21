@@ -67,8 +67,8 @@ console.log(newScoreArray)
 
 function addTotalFrames(){
   for (let i = 0; i < newScoreArray.length; i++){
-    let frameSum = newScoreArray[i]++
-    return totalScore += frameSum
+    let frameSum = newScoreArray[i] 
+    totalScore += frameSum
   }
 }
 
