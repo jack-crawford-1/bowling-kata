@@ -37,49 +37,29 @@ const frames = [
 
 
 
-function addSingleFrame(a, b){
-  return a + b
-}
-
-let totalScore = 0
-let newScoreArray = [ ]
-
-
-function addAllFrames(frames){
-  //Loop through frames and within all frames to return an array of each frame total
-  frames.forEach(frame => {
-    let newScore = addSingleFrame(frame[0], frame[1])
-    newScoreArray.push(newScore)
-    // console.log(newScore)
-  })
-  return newScoreArray
-}
-
-addAllFrames(frames)
-console.log(newScoreArray)
-
-// while we try something new
-// function addTotalFrames(){
-//   const initialValue = 0
-//   totalScore = newScoreArray.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
-//   return totalScore
+// function addSingleFrame(a, b){
+//   return a + b
 // }
 
-function addTotalFrames(){
-  for (let i = 0; i < newScoreArray.length; i++){
-    let frameSum = newScoreArray[i] 
-    totalScore += frameSum
-  }
+// let newScoreArray = [ ]
+
+
+// function addAllFrames(frames){
+//   frames.forEach(frame => {
+//     let newScore = addSingleFrame(frame[0], frame[1])
+//     newScoreArray.push(newScore)
+//   })
+//   return newScoreArray
+// }
+//returns an array of numbers (sum of first and second bowl in each position)
+// console.log(addAllFrames(frames))
+
+function scoreSimpleGame(frames){
+  let result = 0
+  frames.forEach((frame) => {
+    result += frame[0] + frame[1]
+  })
+  return result
 }
+console.log(scoreSimpleGame(frames))
 
-addTotalFrames()
-console.log(totalScore)
-
-// function addTotalFrame(frame){
-//   let totalScore = 0
-//   frames.forEach((frame) => {
-//     const score = frame[0] + frame[1]
-//     totalScore += score
-//     return totalScore
-  // })}
-  
