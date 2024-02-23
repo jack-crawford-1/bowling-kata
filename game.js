@@ -1,11 +1,11 @@
 // Score 64 (simple game):
-const frames = [
-  [2, 0], [4, 2], [6, 0], [2, 4], [1, 5], [7, 0], [5, 2], [7, 0], [2, 6], [8, 1]
-]
-// Score 71 (with spares):
 // const frames = [
-//   [6, 1], [4, 0], [6, 4], [2, 7], [3, 5], [5, 0], [5, 5], [0, 0], [1, 6], [7, 2]
+//   [2, 0], [4, 2], [6, 0], [2, 4], [1, 5], [7, 0], [5, 2], [7, 0], [2, 6], [8, 1]
 // ]
+// Score 71 (with spares):
+const frames = [
+  [5, 5], [4, 0], [6, 4], [2, 7], [3, 5], [5, 0], [6, 1], [0, 0], [1, 6], [7, 2]
+]
 // Score 104 (with spares and strikes):
 // const frames = [
 //   [6, 4], [8, 0], [10, 0], [2, 7], [5, 5], [4, 0], [10, 0], [2, 1], [2, 6], [4, 4]
@@ -61,5 +61,17 @@ function scoreSimpleGame(frames){
   })
   return result
 }
-console.log(scoreSimpleGame(frames))
+// console.log(scoreSimpleGame(frames))
 
+
+function scoreGameWithSpares(frames){
+  let splitScore = 0
+  let totalScore = 0
+  if (frames[0][0] + frames[0][1] === 10){
+  splitScore = frames[0][0] + frames[0][1] + frames[1][0]
+  totalScore  = splitScore += scoreSimpleGame(frames) - (frames[0][0] + frames[0][1])
+    }
+return totalScore
+}
+
+console.log(scoreGameWithSpares(frames))
