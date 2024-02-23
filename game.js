@@ -2,14 +2,14 @@
 // const frames = [
 //   [2, 0], [4, 2], [6, 0], [2, 4], [1, 5], [7, 0], [5, 2], [7, 0], [2, 6], [8, 1]
 // ]
-// // Score 71 (with spares):
-// const frames = [
-//   [6, 1], [4, 0], [6, 4], [2, 7], [3, 5], [5, 0], [5, 5], [0, 0], [1, 6], [7, 2]
-// ]
-// Score 104 (with spares and strikes):
+// Score 71 (with spares):
 const frames = [
-  [6, 4], [8, 0], [10, 0], [2, 7], [5, 5], [4, 0], [10, 0], [2, 1], [2, 6], [4, 4]
+  [6, 1], [4, 0], [6, 4], [2, 7], [3, 5], [5, 0], [5, 5], [0, 0], [1, 6], [7, 2]
 ]
+// Score 104 (with spares and strikes):
+// const frames = [
+//   [6, 4], [8, 0], [10, 0], [2, 7], [5, 5], [4, 0], [10, 0], [2, 1], [2, 6], [4, 4]
+// ]
 //
 // Score 119 (with spares, strikes and a double strike):
 // const frames = [
@@ -26,15 +26,6 @@ const frames = [
 //   [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 10, 10]
 // ]
 
-
-// end goal: Score the total
-// function to score frame total
-// be able to add each Array
-//add all arrays together
-// summarise array of arrays
-// singleFrame = a + b
-// totalFrames =  (a + B) + etc
-
 // function scoreSimpleGame(frames){
 //   let result = 0
 //   frames.forEach((frame) => {
@@ -49,17 +40,10 @@ function scoreGameWithSpares(frames){
   frames.forEach((frame, index) => {
     let frameScore = frame[0] + frame[1];
     score += frameScore
-    if(frameScore === 10 && index < frames.length -1){
+    if(frameScore === 10){
       score += frames[index + 1][0]
       } 
     })
     return score
   }
-
 console.log(scoreGameWithSpares(frames))
-
-
-
-// if (frames[0][0] + frames[0][1] === 10){
-  // splitScore = frames[0][0] + frames[0][1] + frames[1][0]
-  // totalScore  = splitScore += scoreSimpleGame(frames) - (frames[0][0] + frames[0][1])
